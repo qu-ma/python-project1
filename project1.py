@@ -16,7 +16,6 @@ def main():
 
     # Generate a random number, convert it to a string, save it in the variable 'target'
     target = str(random.randrange(1, 11))
-    print(target)
 
     # Keep track of number of guesses
     number_of_guesses = 0
@@ -32,7 +31,6 @@ def main():
         # Check if number of guesses is 5 and the guess is not equal to the target number
         if number_of_guesses == 5 and guess != target:
             print(f"You've guessed {number_of_guesses} times and didn't guess correctly. Game Over!")
-            break
         
         # Check if guess is not a digit
         elif not guess.isdigit():
