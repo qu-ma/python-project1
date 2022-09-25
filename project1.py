@@ -2,6 +2,8 @@
 
 # Import the random module
 import random
+import crayons
+from art import *
 
 # Docstring sharing some information about the Python script
 """ Guess the number game! """
@@ -10,9 +12,10 @@ import random
 def main():
 
     # Print out some welcome text, and some instructions on how to play the game
-    print("Welcome to Guess the Number Game!")
-    print("Guess a number from 1 to 10.")
-    print("Input must be a numeric digit. Characters are not allowed.\n")
+    print(f"{crayons.magenta('Welcome to Guess the Number Game!', bold = True)}")
+    print(f"{crayons.yellow('How to play:')}")
+    print(f"\t{crayons.green('➜')} {crayons.blue('Guess a number from 1 to 10.')}")
+    print(f"\t{crayons.green('➜')} {crayons.blue('Input must be a numeric digit. Characters are not allowed.')}\n")
 
     # Generate a random number, convert it to a string, save it in the variable 'target'
     target = str(random.randrange(1, 11))
@@ -30,7 +33,11 @@ def main():
 
         # Check if number of guesses is 5 and the guess is not equal to the target number
         if number_of_guesses == 5 and guess != target:
-            print(f"You've guessed {number_of_guesses} times and didn't guess correctly. Game Over!")
+            # print(f"You've guessed {number_of_guesses} times and didn't guess correctly. Game Over!")\
+            tprint("GAME OVER!", font = "tarty1")
+
+            colors = ["red", "green", "yellow", "blue", "black", "magenta", "cyan", "white"]
+            randColor = random.randrange(0, len(colors))
         
         # Check if guess is not a digit
         elif not guess.isdigit():
@@ -43,7 +50,7 @@ def main():
         
         # If guess is incorrect, then prompt to guess again
         else:
-            print("Incorrect, please guess again\n")
+            print(f"{crayons.red('Incorrect, please guess again')}\n")
 
 # If conditional that calls the main function
 if __name__ == "__main__":
