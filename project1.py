@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Import the random module
+# Import the random module, crayons, and art
 import random
 import crayons
 from art import *
